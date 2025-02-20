@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deployment Success</title>
   <style>
     body {
@@ -12,6 +13,7 @@
       line-height: 1.6;
       text-align: center;
       padding: 40px;
+      overflow: hidden;
     }
 
     .container {
@@ -21,6 +23,20 @@
       padding: 30px;
       max-width: 800px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
@@ -28,6 +44,20 @@
       font-weight: 600;
       color: #ff6f61;
       margin-bottom: 15px;
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideIn 1.5s ease-out forwards 0.5s;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     h2 {
@@ -35,26 +65,51 @@
       font-weight: normal;
       color: #343a40;
       margin-bottom: 25px;
+      white-space: pre-line;
+      opacity: 0;
+      transform: translateX(50px);
+      animation: slideIn 1.5s ease-out forwards 1s;
     }
 
     p {
       font-size: 1.1em;
       color: #495057;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1.5s ease-out forwards 1.5s;
     }
 
     a {
       color: #1e90ff;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     a:hover {
-      text-decoration: underline;
+      background: #0056b3;
+      transform: scale(1.1);
     }
 
     .emoji {
-      font-size: 2em;
+      font-size: 2.5em;
       margin-bottom: 10px;
+      display: inline-block;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
     }
   </style>
 </head>
@@ -62,8 +117,16 @@
   <div class="container">
     <div class="emoji">🎉🚀</div>
     <h1>Success!</h1>
-    <h2>I am M012330 Narendrababu, and I have successfully set up a seamless deployment pipeline. This application was retrieved from an Amazon S3 bucket and deployed to three Amazon EC2 instances using AWS CodeDeploy.</h2>
-    <p>For further guidance, check out the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html" target="_blank">AWS CodePipeline Documentation</a>.</p>
+    <h2>
+      I am M012330 Narendrababu, and I have successfully set up a seamless deployment pipeline. 
+      This application was retrieved from an Amazon S3 bucket and deployed to three Amazon EC2 instances using AWS CodeDeploy.
+    </h2>
+    <p>
+      For further guidance, check out the 
+      <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html" target="_blank">
+        AWS CodePipeline Documentation
+      </a>.
+    </p>
   </div>
 </body>
 </html>
